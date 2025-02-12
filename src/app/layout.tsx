@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import StyledComponentsProvider from "@/components/StyledComponentsProvider";
 
 export const metadata: Metadata = {
   title: "-",
@@ -26,7 +27,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className={`${pretendard.variable}`}> {children}</body>
+      <body className={`${pretendard.variable}`}>
+        <StyledComponentsProvider>{children}</StyledComponentsProvider>
+      </body>
     </html>
   );
 }
